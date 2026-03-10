@@ -1,0 +1,11 @@
+@EndUserText.label: 'Access Control for Agency'
+@MappingRole: true
+define role Z7109_AGENCY {
+  grant 
+    select
+      on
+        Z7109_I_AGENCY
+          where
+            (CountryCode) = aspect pfcg_auth(/DMO/TRVL, /DMO/CNTRY,  ACTVT = '03');
+            
+}
